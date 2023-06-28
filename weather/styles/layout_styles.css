@@ -1,0 +1,83 @@
+*
+{
+    font-family: 'Bradley Hand', cursive;
+}
+
+body
+{
+    background-color: #f5f5f5;
+    
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-container
+{
+    display: flex;
+    flex-direction: row;
+    width: 650px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
+}
+
+.left-container
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right-container 
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+.geography-info
+{
+    background-color: lightgreen;
+    flex: 1;
+    padding: 15px
+}
+
+.weather-info 
+{
+    background-color: lightpink;
+    flex: 1;
+    padding : 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.detail-info
+{
+    background-color: lightsalmon;
+    flex: 3;
+    padding : 15px;
+    display: grid;
+    grid: repeat(3, 30px) / repeat(2, 1fr);
+}
+
+.weeks-info
+{
+    background-color: lightskyblue;
+    flex: 3;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    padding: 15px;
+}
+
+.location-input
+{
+    background-color: lightseagreen;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
