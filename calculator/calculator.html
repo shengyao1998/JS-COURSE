@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="calculator_styles/styles.css">
+        <title>Calculator By Yap (Valinna JS)</title>
+    </head>
+
+    <body>
+        <div class = "container">
+            <section id="Display-area">
+                <div class="currentInput"></div>
+                <div class="answerScreen">0</div>
+            </section>
+
+            <!--
+                Yes, you can remove the type declaration from the buttons in the 
+                code you provided. By default, <button> elements have a type 
+                attribute value of "submit", which means they will act as submit 
+                buttons within a form and trigger the form submission behavior.
+
+                In the case of a calculator application where the buttons are not 
+                part of a form and are used solely for performing calculations, 
+                setting type="button" is recommended to prevent any unintended 
+                form submissions.
+            -->
+
+            
+            <!--
+                Used value instead of Id as in ID are usually used for more specific
+                type of application. And the naming of the id not suppose to start
+                with number, Capital letter or symbol.
+
+                Using value will allow the HTML to pass that particular value once the
+                event was triggered.
+            -->
+
+            <section class = "calculator_btns">
+                <button type="button" id="all-clear"> AC </button>
+                <button type="button" id="delete"> DE </button>
+                <button type="button" class = "percentages_button" value="%"> % </button>
+                <button type="button" class = "operation_button" value="/"> &#247 </button>
+                <button type="button" class = "number_button" value="7"> 7 </button>
+                <button type="button" class = "number_button" value="8"> 8 </button>
+                <button type="button" class = "number_button" value="9"> 9 </button>
+                <button type="button" class = "operation_button" value="*"> &#215 </button>
+                <button type="button" class = "number_button" value="4"> 4 </button>
+                <button type="button" class = "number_button" value="5"> 5 </button>
+                <button type="button" class = "number_button" value="6"> 6 </button>
+                <button type="button" class = "operation_button" value="-"> &#45 </button>
+                <button type="button" class = "number_button" value="1"> 1 </button>
+                <button type="button" class = "number_button" value="2"> 2 </button>
+                <button type="button" class = "number_button" value="3"> 3 </button>
+                <button type="button" class = "operation_button" value="+"> &#43 </button>
+                <button type="button" class = "number_button" value="00"> 00 </button>
+                <button type="button" class = "number_button" value="0"> 0 </button>
+                <button type="button" class = "decimal_button" value="."> . </button>
+                <button type="button" class = "evaluate_button" id="evaluate" value="="> &#61 </button>
+            </section>
+        </div>
+        <script  src="calculator.js"></script>
+    </body>
+</html>
