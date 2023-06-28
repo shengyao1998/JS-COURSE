@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Todo App </title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="todo_styles/general.css">
+        <link rel="stylesheet" href="todo_styles/control.css">
+
+    </head>
+
+    <body>
+        <div class="todo-layout">
+            <p>Welcome Back</p>
+            <p>What's on your todo list ?</p>
+
+            <div class="todo-titles-bar">
+                <input class="todo-title" id="todo-title" type = "text" placeholder="e.g. Wash Car">
+                <input class="date-picker" id="date-picker" type = "date">
+                
+                <select class="todo-severity" id="todo-severity" name="severity">
+                    <option value="" disabled selected selected>Severity</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                
+                <select class="todo-status" id="todo-status" name="status">
+                    <option value="" disabled selected selected>Status</option>
+                    <option value="Completed">Completed</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Pending">Pending</option>
+                    <option value="On Halt">On Halt</option>
+                    <option value="Delay">Delay</option>
+                </select>
+                <button class="add-todo-button" onclick= "addTodo()" >Add Todo</button>
+            </div>
+        </div>
+
+        <div id="todo-list"></div>
+
+        <script>
+            // ************************
+            // ***      MODEL       ***
+            // ************************
+
+            // If localstorage has a todos array, then use it
+            // Otherwise use the default array.
+            let todos;
+            const savedTodos = JSON.parse(localStorage.getItem('todos'));
+
+            if (Array.isArray(savedTodos))
+            {
+                todos = savedTodos;
+            }
+            else
+            {
+                todos = [{
+                        title: "Wash Car",
+                        dueDate: "01-01-2023",
+                        severity: "Low",
+                        status: "On Halt",
+                        id: "id1"
+                    },
+                    {
+                        title: "Visit Skin Specialist",
+                        dueDate: "17-02-2023",
+                        severity: "Medium",
+                        status: "Pending",
+                        id: "id2"
+                    },
+                    {
+                        title: "Learn Piano",
+                        dueDate: "23-03-2023",
+                        severity: "High",
+                        status: "In Progress",
+                        id: "id3"
+                    }];
+            }
+            render();
+
+
+            function createTodo(title, dueDate, severity, status)
+            {
+                const id = '' + new Date().getTime();
+
+                const newTodo_obj = 
+                {
+                    title: title,
+                    dueDate: dueDate,
+                    severity: severity,
+                    status: status,
+                    id: id,
+                }
+                todos.push(newTodo_obj);
+                saveTodos();
+            }
+
+            function removeTodo(idToDelete)
+            {
+                todos = todos.filter(function (todo) 
+                {
+                    if (todo.id === idToDelete) 
+                    {
+                        return false;
+                    } 
+                    else 
+                    {
+                        return true;
+                    }
+                });
+                saveTodos();
+            }
+
+            function saveTodos() 
+            {
+                localStorage.setItem('todos', JSON.stringify(todos));
+            }
+
+
+
+
+            // ************************
+            // ***      CONTROL     ***
+            // ************************
+            function addTodo()
+            {
+                let title;
+                let dueDate;
+                let severity;
+                let status;
+
+                const newTodo_title = document.getElementById('todo-title');
+                const newTodo_dueDate = document.getElementById('date-picker');
+                const newTodo_severity = document.getElementById('todo-severity');
+                const newTodo_status = document.getElementById('todo-status');
+
+                if (newTodo_title.value === "")
+                    title = "Unknow";
+                else
+                    title = newTodo_title.value;
+
+                if (newTodo_dueDate.value === "")
+                    dueDate = "Unknow";
+                else
+                    dueDate = newTodo_dueDate.value;
+
+                if (newTodo_severity.value === "")
+                    severity = "Low";
+                else
+                    severity = newTodo_severity.value;
+                    
+                if (newTodo_status.value === "")
+                    status = "Pending";
+                else
+                    status = newTodo_status.value;
+
+                createTodo(title, dueDate, severity, status);
+                render();
+            }
+
+            function deleteTodo(event) 
+            {
+                const deleteButton = event.target;
+                const idToDelete = deleteButton.id;
+
+                removeTodo(idToDelete);               
+                render();
+            }
+            
+            // ************************
+            // ***      VIEW        ***
+            // ************************
+            function render()
+            {
+                document.getElementById('todo-list').innerHTML = '';
+                // const todoList = document.getElementById ("todo-list");
+
+                for (i=0; i<todos.length; i++)
+                {
+                    let element = document.createElement('div');
+                    element.className = "todo_" + (i+1);
+                    element.style.border = "2px solid rgb(156, 156, 156, 0.2)";
+                    element.style.borderRadius = "40px";
+                    element.style.paddingTop = "10px";
+                    element.style.paddingBottom = "10px";
+                    element.style.paddingLeft = "20px";
+                    element.style.paddingRight = "10px";
+                    element.style.display = "flex";
+                    element.style.justifyContent = "center";
+                    element.style.alignItems =  "center";
+                    element.style.margin = "10px auto";
+                    element.style.maxWidth = "800px";
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = "delete-button";
+                    deleteButton.innerText = "Delete";
+                    deleteButton.style = 'margin: 0px';
+                    deleteButton.style = 'margin-right: 20px';
+                    deleteButton.id = todos[i].id;
+                    deleteButton.onclick = deleteTodo;
+                    
+                    const element_title = document.createElement('div');
+                    const element_dueDate = document.createElement('div');
+                    const element_severity = document.createElement('div');
+                    const element_status = document.createElement('div');
+                    
+                    element_title.className = "todo-title-content";
+                    element_dueDate.className = "todo-dueDate-content";
+                    element_severity.className = "todo-severity-content";
+                    element_status.className = "todo-status-content";
+
+                    element_title.innerText = todos[i].title;
+                    element_dueDate.innerText = todos[i].dueDate;
+                    element_severity.innerText = todos[i].severity;
+                    element_status.innerText = todos[i].status;
+
+                    element.appendChild (element_title);
+                    element.appendChild (element_dueDate);
+                    element.appendChild (element_severity);
+                    element.appendChild (element_status);
+                    element.appendChild (deleteButton);
+
+                    const todoList = document.getElementById ("todo-list");
+                    todoList.appendChild (element);
+                }
+            }
+        </script>
+    </body>
+</html>

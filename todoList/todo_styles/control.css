@@ -1,0 +1,107 @@
+
+
+.todo-titles-bar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    gap: 40px;
+    margin: 20px auto;
+}
+
+.todo-title, 
+.date-picker, 
+.todo-severity, 
+.todo-status,
+.add-todo-button
+{
+    min-width: 100px;
+    max-width: 400px;
+    width: 200px;
+    height: 30px;
+    padding: 0px;
+}
+
+.todo-title-content, 
+.todo-dueDate-content, 
+.todo-severity-content, 
+.todo-status-content
+{
+    min-width: 100px;
+    max-width: 400px;
+    width: 200px;
+    height: 30px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.todo-title,
+.todo-title-content
+{
+    padding-left: 10px;
+}
+
+.delete-button
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.delete-button
+{
+    background-color: rgb(170, 20, 20);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: opacity 0.15s;
+}
+
+
+.add-todo-button
+{
+    background-color: rgb(10, 200, 10);
+    color: black;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.delete-button:hover,
+.add-todo-button:hover
+{
+    opacity: 0.75;
+}
+
+
+.todo-title,
+.date-picker
+{
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.todo-severity, 
+.todo-status
+{
+    border: 1px solid gray;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+}
