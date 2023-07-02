@@ -1,0 +1,172 @@
+*
+{
+    font-family: 'Bradley Hand', cursive;
+}
+
+body
+{
+    background-color: #f5f5f5;
+    
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-container
+{
+    display: flex;
+    flex-direction: row;
+    width: 650px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
+}
+
+.left-container
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-container 
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.geography-info
+{
+    flex: 1;
+    padding: 15px
+}
+
+.weather-info 
+{
+    flex: 1;
+    padding : 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: lightgray;
+}
+
+.detail-info
+{
+    background-color: #5a5a5a;
+    flex: 3;
+    padding : 15px;
+    display: grid;
+    grid: repeat(3, 30px) / repeat(2, 1fr);
+    border-top-right-radius: 20px;
+}
+
+.weeks-info
+{
+    background-color: rgb(146, 146, 146);
+    flex: 3;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    padding: 15px;
+}
+
+.location-input
+{
+    background-color: rgb(62, 62, 62);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 20px;
+}
+
+
+.days
+{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.date,
+.time
+{
+    padding-top: 2px;
+    font-size: 16px;
+}
+
+.location
+{
+    padding-top: 10px;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.weather
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.temperature
+{
+    padding-top: 2px;
+    font-size: 16px;
+}
+
+.precipition,
+.humidity,
+.wind
+{
+    font-size: 15px;
+}
+
+.weekday
+{
+    border: solid;
+    border-color: rgb(76, 188, 154);
+    border-width: 1px;
+    border-radius: 7.5px;
+    background-color: #676666;
+    font-size: 10px;
+}
+
+.search-bar
+{
+    width: 70%;
+    height: 50%;
+    border: solid;
+    border-width: 1px;
+    border-radius: 7.5px;
+    border-color: #676666;
+    margin-right: 5px;
+    padding-left: 5px;
+}
+
+.search-button
+{
+    height: 25px;
+    width: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7.5px;
+}
+
+.search-icon
+{
+    height: 20px;
+    width: 20px;
+}
+
+.left-container 
+{
+    background-image: url('background/Background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9; /* Adjust the opacity value as desired */
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}

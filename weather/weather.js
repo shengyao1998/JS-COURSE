@@ -23,7 +23,7 @@ let forcast_Wind = document.querySelector('.wind');
 
 
 // OpenWeatherMap API. Do not share it !!!
-const api = process.env.WEATHER_API_KEY;
+const api = "xxx";
 console.log(api);
 
 
