@@ -1,3 +1,6 @@
+/************************************/
+/*          Body Styling            */
+/************************************/
 *
 {
     font-family: 'Bradley Hand', cursive;
@@ -5,168 +8,282 @@
 
 body
 {
-    background-color: #f5f5f5;
-    
-    height: 90vh;
+    /*Layout*/
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 90vh;
+
+    /*Background*/
+    background-color: #131313;
 }
 
+
+
+
+
+/************************************/
+/*         Container Styling        */
+/************************************/
 .weather-container
 {
+    /*Layout*/
     display: flex;
     flex-direction: row;
     width: 650px; /* Adjust the width as needed */
     height: 350px; /* Adjust the height as needed */
 }
 
-.left-container
-{
+.left-section 
+{   
+    /*Layout*/
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    /*Font*/
+
+    /*Background*/
+    background-image: url('background/Background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    opacity: 0.9;
+
+    /*Border*/
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
-.right-container 
+.right-section 
 {
+    /*Layout*/
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    /*Font*/
+    color: black;
+
+    /*Background*/
+    background-color: rgb(210, 210, 210);
+
+    /*Border*/
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-.geography-info
+
+/************************************/
+/*        Sub Section Styling       */
+/************************************/
+.geography-sub-section
 {
+    /*Layout*/
     flex: 1;
-    padding: 15px
+    padding: 15px;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
 }
 
-.weather-info 
+.weather-sub-section
 {
+    /*Layout*/
     flex: 1;
-    padding : 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    color: lightgray;
-}
-
-.detail-info
-{
-    background-color: #5a5a5a;
-    flex: 3;
     padding : 15px;
-    display: grid;
-    grid: repeat(3, 30px) / repeat(2, 1fr);
-    border-top-right-radius: 20px;
+
+    /*Font*/
+    color: lightgray;
+
+    /*Background*/
+    /*Border*/
 }
 
-.weeks-info
+.detail-sub-section
 {
-    background-color: rgb(146, 146, 146);
+    /*Layout*/
+    flex: 6;
+    padding : 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*Font*/
+    font-size: 2px;
+
+    /*Background*/
+    /*Border*/
+}
+
+.weeks-sub-section
+{
+    /*Layout*/
     flex: 3;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
     padding: 15px;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
 }
 
-.location-input
+.location-sub-section
 {
-    background-color: rgb(62, 62, 62);
+    /*Layout*/
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom-right-radius: 20px;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
 }
 
 
+
+
+
+/************************************/
+/*         Content Styling          */
+/************************************/
 .days
 {
+    /*Layout*/
+    padding-bottom: 2px;
+
+    /*Font*/
     font-weight: bold;
-    font-size: 24px;
+    font-size: 26px;
+
+    /*Background*/
+    /*Border*/
 }
 
 .date,
 .time
 {
+    /*Layout*/
     padding-top: 2px;
+
+    /*Font*/
     font-size: 16px;
+
+    /*Background*/
+    /*Border*/
 }
 
 .location
 {
-    padding-top: 10px;
+    /*Layout*/
+    padding-top: 4px;
+
+    /*Font*/
     font-style: italic;
     font-size: 14px;
+
+    /*Background*/
+    /*Border*/
 }
 
 .weather
 {
+    /*Layout*/
+    /*Font*/
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+
+    /*Background*/
+    /*Border*/
 }
 
 .temperature
 {
+    /*Layout*/
     padding-top: 2px;
+
+    /*Font*/
     font-size: 16px;
+
+    /*Background*/
+    /*Border*/
 }
 
-.precipition,
+.visibility,
 .humidity,
 .wind
 {
-    font-size: 15px;
+    /*Layout*/
+    flex: 1;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
 }
 
 .weekday
 {
-    border: solid;
-    border-color: rgb(76, 188, 154);
-    border-width: 1px;
-    border-radius: 7.5px;
-    background-color: #676666;
+    /*Layout*/
+    /*Font*/
     font-size: 10px;
+
+    /*Background*/
+    background-color: #e97659;
+
+    /*Border*/
+    border-width: 1px;
+    border-radius: 5px;
 }
 
 .search-bar
 {
+    /*Layout*/
     width: 70%;
     height: 50%;
+    margin-right: 5px;
+    padding-left: 5px;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
     border: solid;
     border-width: 1px;
     border-radius: 7.5px;
     border-color: #676666;
-    margin-right: 5px;
-    padding-left: 5px;
 }
 
 .search-button
 {
+    /*Layout*/
     height: 25px;
     width: 25px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
+    /*Font*/
+    /*Background*/
+
+    /*Border*/
     border-radius: 7.5px;
 }
 
 .search-icon
 {
+    /*Layout*/
     height: 20px;
     width: 20px;
-}
 
-.left-container 
-{
-    background-image: url('background/Background2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.9; /* Adjust the opacity value as desired */
-    background-color: black;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+    /*Font*/
+    /*Background*/
+    /*Border*/
 }

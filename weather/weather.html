@@ -7,31 +7,35 @@
 
     <body>
         <div class = "weather-container">
-            <section class = "left-container">
-                <div class = "geography-info">
+            <section class = "left-section">
+                <div class = "geography-sub-section">
                     <div class = "days"></div>
                     <div class = "date"></div>
                     <div class = "time"></div>
                     <div class = "location"> Paris, PR </div>
                 </div>
-                <div class = "weather-info">     
+                <div class = "weather-sub-section">     
                     <div class = "weather"> Sunny </div>
                     <div class = "temperature"> 29 C </div>
                 </div>
             </section>
 
-            <section class = "right-container">
-                <div class = "detail-info">
-                    <div> Visibility </div>
-                    <div class = "visibility"> </div>
-
-                    <div> Humidity </div>
-                    <div class = "humidity"> </div>
-
-                    <div> Wind </div>
-                    <div class = "wind"> </div>
+            <section class = "right-section">
+                <div class = "detail-sub-section">
+                    <div class = "visibility">
+                        <div id = "visibility"> Visibility </div>
+                        <div value = "visibility"> </div>
+                    </div>
+                    <div class = "humidity">
+                        <div id = "humidity"> Humidity </div>
+                        <div value = "humidity"> </div>
+                    </div>
+                    <div class = "wind">
+                        <div id = "wind"> Wind </div>
+                        <div value = "wind"> </div>
+                    </div>
                 </div>
-                <div class = "weeks-info">
+                <div class = "weeks-sub-section">
                     <div class = "weekday" id = "Day1"> 
                         <div> Day 1 </div>
                         <div> Icon </div>
@@ -63,7 +67,7 @@
                         <div> Day weather </div>
                     </div>
                 </div>
-                <div class = "location-input">
+                <div class = "location-sub-section">
                     <input class="search-bar" type="text" placeholder="e.g. Kuala Lumpur">
                     <button class="search-button">
                         <img class="search-icon" src="weather_styles/icons/search-icon.svg">
