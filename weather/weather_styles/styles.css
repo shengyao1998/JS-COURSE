@@ -59,7 +59,7 @@ body
 .right-section 
 {
     /*Layout*/
-    flex: 1;
+    flex: 1.25;
     display: flex;
     flex-direction: column;
 
@@ -108,15 +108,14 @@ body
 .detail-sub-section
 {
     /*Layout*/
-    flex: 6;
+    flex: 2;
     padding : 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     /*Font*/
-    font-size: 2px;
+    font-size: 16px;
 
     /*Background*/
     /*Border*/
@@ -127,7 +126,7 @@ body
     /*Layout*/
     flex: 3;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
     padding: 15px;
 
@@ -139,7 +138,7 @@ body
 .location-sub-section
 {
     /*Layout*/
-    flex: 1;
+    flex: 1.5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,25 +223,83 @@ body
 {
     /*Layout*/
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     /*Font*/
     /*Background*/
     /*Border*/
 }
 
-.weekday
+#visibility,
+#humidity,
+#wind
+{
+    flex: 1;
+}
+
+.week
 {
     /*Layout*/
-    /*Font*/
-    font-size: 10px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
 
+    /*Font*/
     /*Background*/
-    background-color: #e97659;
+    background-color: rgb(53, 53, 53);
 
     /*Border*/
     border-width: 1px;
     border-radius: 5px;
 }
+
+.weekdays,
+.days-temp,
+.days-wea
+{
+    /*Layout*/
+    /*Font*/
+    font-size: 12px;
+    color: #d3d3d3;
+
+    /*Background*/
+    /*Border*/
+}
+
+.weekdays
+{
+    /*Layout*/
+    flex: 1;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
+}
+
+.days-temp
+{
+    /*Layout*/
+    padding-bottom: 5px;
+
+    /*Font*/
+    /*Background*/
+    /*Border*/
+}
+
+.days-wea
+{
+    /*Layout*/
+    padding-bottom: 10px;
+
+    /*Font*/
+    font-size: 10px;
+
+    /*Background*/
+    /*Border*/
+}
+
 
 .search-bar
 {

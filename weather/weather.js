@@ -11,6 +11,8 @@ let forcast_Visib = document.querySelector('.visibility');
 let forcast_Humid = document.querySelector('.humidity');
 let forcast_Wind = document.querySelector('.wind');
 
+let searchbtn = document.querySelector('.search-button');
+let input_city = document.querySelector('.search-bar');
 
 // Type selector
 // To select elements by node name, you use the type selector e.g., a selects all <button> elements
@@ -23,8 +25,9 @@ let forcast_Wind = document.querySelector('.wind');
 
 
 // OpenWeatherMap API. Do not share it !!!
-const api = "xxx";
-console.log(api);
+const api_key = "xxx";
+// https://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&appid={yourkey}
+
 
 
 // ***********************************
@@ -44,8 +47,14 @@ let days_waether = [];
 let days_temp = [];
 
 
-function weatherBalloon() 
+function weatherBalloon(city_name) 
+api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
 {
+    let web1 = "https://api.openweathermap.org/data/2.5/weather?q="+city_name+"&appid="+api_key;
+    let web2 = "https://api.openweathermap.org/data/2.5/weather?q="+city_name",CA&appid="+api_key;
+    city = 
+
     // Fetch the weather for today
     fetch('')
     .then (function (response)
@@ -86,6 +95,9 @@ function weatherBalloon()
     .catch(function()
     {
     });
+
+
+    input_city.value = "";
 }
 
 
@@ -121,6 +133,11 @@ updateDateTime();
 setInterval(updateDateTime, 1000);
 weatherBalloon();
 
+searchbtn.addEventListener("click", () => 
+{
+    weatherBalloon(input_city.value);
+});
+
 
 // ************************
 // ***      VIEW        ***
@@ -133,7 +150,7 @@ function render()
     forcast_Location.innerHTML = frcst_city + ", " + frcst_country;
     forcast_Weather.innerHTML = frcst_weather;
     forcast_Temp.innerHTML = frcst_temp + " &#8451";
-    forcast_Visib.innerHTML = frcst_visib + " m";
-    forcast_Humid.innerHTML = frcst_humid + " %";
-    forcast_Wind.innerHTML = frcst_wind + " km/h";
+    // forcast_Visib.innerHTML = frcst_visib + " m";
+    // forcast_Humid.innerHTML = frcst_humid + " %";
+    // forcast_Wind.innerHTML = frcst_wind + " km/h";
 }
