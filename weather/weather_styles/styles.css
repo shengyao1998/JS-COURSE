@@ -32,6 +32,12 @@ body
     flex-direction: row;
     width: 650px; /* Adjust the width as needed */
     height: 350px; /* Adjust the height as needed */
+
+    /*Border*/
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(63, 49, 49);
+    border-radius: 20px;
 }
 
 .left-section 
@@ -242,16 +248,18 @@ body
 .week
 {
     /*Layout*/
-    padding: 4px;
+    padding: 6px;
     display: flex;
     flex-direction: column;
 
     /*Font*/
     /*Background*/
-    background-color: rgb(53, 53, 53);
+    /* background-color: rgb(143, 66, 14); */
+    background-color: rgb(57, 18, 18);
 
     /*Border*/
-    border-width: 1px;
+    border-style: solid;
+    border-width: 3px;
     border-radius: 5px;
 }
 
@@ -262,7 +270,7 @@ body
     /*Layout*/
     /*Font*/
     font-size: 12px;
-    color: #d3d3d3;
+    color: lightgray;
 
     /*Background*/
     /*Border*/
