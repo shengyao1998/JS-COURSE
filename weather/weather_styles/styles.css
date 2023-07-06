@@ -255,7 +255,7 @@ body
     /*Font*/
     /*Background*/
     /* background-color: rgb(143, 66, 14); */
-    background-color: rgb(57, 18, 18);
+    background-color: rgb(66, 12, 12);
 
     /*Border*/
     border-style: solid;
@@ -351,4 +351,25 @@ body
     /*Font*/
     /*Background*/
     /*Border*/
+}
+
+
+
+
+
+
+/************************************/
+/*             Img Styling          */
+/************************************/
+.weekly-icon img
+{
+    width: 40px;
+    height: 40px;
+}
+
+.weather-icon img
+{
+    width: 75px;
+    height: 75px;
+    margin-top: 10px;
 }
